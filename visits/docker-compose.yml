@@ -1,0 +1,11 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    restart: always
+    build: . #Use Dockerfile in current directory to build it instead of a predefined image like redis
+    #port mapping
+    ports:
+      - "80:8081"
+      # <Host port>:<Guest port>
